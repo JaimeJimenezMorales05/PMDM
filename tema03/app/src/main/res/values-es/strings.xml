@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RecursosJaime</string>
-    <string name="nombre" translatable="false">Jaime Jimenez Morales</string>
     <string name="btn_continuar">Continuar</string>
     <string name="btn_cancelar">Cancelar</string>
 </resources>

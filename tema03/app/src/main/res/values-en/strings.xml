@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RecursosJaime</string>
+    <string name="btn_continuar">Continue</string>
+    <string name="btn_cancelar">Cancel</string>
+</resources>
