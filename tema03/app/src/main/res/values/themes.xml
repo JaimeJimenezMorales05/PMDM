@@ -6,4 +6,13 @@
     </style>
 
     <style name="Theme.RecursosJaime" parent="Base.Theme.RecursosJaime" />
+    
+    <style name="EstiloBotones">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
 </resources>

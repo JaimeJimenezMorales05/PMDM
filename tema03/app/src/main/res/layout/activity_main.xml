@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_continuar"
         app:backgroundTint="@color/green"
+        style="@style/EstiloBotones"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="405dp" />
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_cancelar"
         app:backgroundTint="@color/red"
+        style="@style/EstiloBotones"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="476dp" />
