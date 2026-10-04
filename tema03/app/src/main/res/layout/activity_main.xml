@@ -22,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_continuar"
+        app:backgroundTint="@color/green"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="405dp" />
@@ -31,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_cancelar"
+        app:backgroundTint="@color/red"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="476dp" />
