@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jaime Jimenez Morales"
+        android:text="@string/app_name"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continuar"
+        android:text="@string/btn_continuar"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="405dp" />
@@ -30,7 +30,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
+        android:text="@string/btn_cancelar"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="476dp" />
