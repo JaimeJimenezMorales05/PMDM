@@ -7,4 +7,11 @@
     <color name="rosa">#F06292</color>
     <color name="cuadro">#156AE9</color>
 
+    <color name="fondo_calc">#000000</color>
+    <color name="pantalla">#000000</color>
+    <color name="texto_pantalla">#FFFFFF</color>
+    <color name="boton_num">#333333</color>
+    <color name="boton_op">#FF9500</color>
+    <color name="texto_boton">#FFFFFF</color>
+
 </resources>
