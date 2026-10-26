@@ -12,4 +12,10 @@
     <string name="error_correo">Escribe tu correo</string>
     <string name="error_pass">Escribe la contraseña</string>
     <string name="msg_intentos">Demasiados intentos</string>
+    <string name="error_correo_vacio">Escribe tu correo</string>
+    <string name="error_pass_vacia">Escribe la contraseña</string>
+    <string name="msg_correcto">Usuario y contraseña correctos</string>
+    <string name="msg_incorrecto">Usuario y/o contraseña incorrectos</string>
+    <string name="msg_recordado">Usuario y contraseña correctos. Almacenados para siguientes accesos</string>
+    <string name="msg_demasiados">Demasiados intentos</string>
 </resources>
