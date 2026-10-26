@@ -7,7 +7,7 @@
     <string name="recordar">Recordar contraseña</string>
     <string name="continuar">Continuar</string>
     <string name="msg_ok">Usuario y contraseña correctos</string>
-    <string name="msg_ok_recordar">Usuario y contraseña correctos. Almacenados para siguientes accesos</string>
+    <string name="msg_ok_recordar">Usuario y contraseña correctos. Almacenados para recordar</string>
     <string name="msg_error">Usuario y/o contraseña incorrectos</string>
     <string name="error_correo">Escribe tu correo</string>
     <string name="error_pass">Escribe la contraseña</string>
