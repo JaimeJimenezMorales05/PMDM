@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">LoginJaime</string>
+    <string name="etiqueta_correo">Correo electrónico</string>
+    <string name="etiqueta_pass">Contraseña</string>
+    <string name="hint_correo">correo@correo.com</string>
+    <string name="hint_pass">Escribe tu contraseña</string>
+    <string name="recordar">Recordar contraseña</string>
+    <string name="continuar">Continuar</string>
+    <string name="msg_ok">Usuario y contraseña correctos</string>
+    <string name="msg_ok_recordar">Usuario y contraseña correctos. Almacenados para siguientes accesos</string>
+    <string name="msg_error">Usuario y/o contraseña incorrectos</string>
+    <string name="error_correo">Escribe tu correo</string>
+    <string name="error_pass">Escribe la contraseña</string>
+    <string name="msg_intentos">Demasiados intentos</string>
 </resources>
