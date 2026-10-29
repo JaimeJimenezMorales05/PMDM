@@ -35,6 +35,9 @@ public class AdaptadorVideojuegos extends RecyclerView.Adapter<AdaptadorVideojue
         holder.tvTitulo.setText(videojuego.getTitulo());
         holder.tvSubtitulo.setText(videojuego.getPlataforma());
         holder.ivImagen.setImageResource(videojuego.getImagen());
+
+        // Al tocar la fila, un Toast con su título
+        holder.itemView.setOnClickListener(v -> Toast.makeText(v.getContext(), videojuego.getTitulo(), Toast.LENGTH_SHORT).show());
     }
 
     @Override

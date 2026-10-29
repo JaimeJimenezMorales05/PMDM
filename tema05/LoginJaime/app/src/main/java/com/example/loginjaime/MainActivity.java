@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView rvLista = findViewById(R.id.rvLista);
         rvLista.setLayoutManager(new LinearLayoutManager(this));
         rvLista.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        rvLista.setLayoutManager(new LinearLayoutManager(this));
+        rvLista.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        rvLista.setAdapter(new AdaptadorVideojuegos(videojuegos));
         rvLista.setAdapter(new AdaptadorVideojuegos(videojuegos));
     }
 }
