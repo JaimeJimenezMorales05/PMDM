@@ -18,4 +18,5 @@
     <string name="msg_incorrecto">Usuario y/o contraseña incorrectos</string>
     <string name="msg_recordado">Usuario y contraseña correctos. Almacenados para siguientes accesos</string>
     <string name="msg_demasiados">Demasiados intentos</string>
+    <string name="imagen_elemento">Imagen del elemento</string>
 </resources>
