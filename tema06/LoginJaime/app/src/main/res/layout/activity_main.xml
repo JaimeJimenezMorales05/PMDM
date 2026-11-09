@@ -6,29 +6,111 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/login_fondo"
     tools:context=".MainActivity">
 
-    <!-- Desde aquí, en lugar del TextView «Hello World!» -->
     <TextView
-        android:id="@+id/tvCabecera"
-        android:layout_width="0dp"
+        android:id="@+id/tvCorreo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@string/cabecera"
-        android:textSize="22sp"
+        android:text="@string/titulo_correo"
+        android:textColor="@color/login_texto"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/etCorreo"
+        app:layout_constraintVertical_chainStyle="packed" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLista"
+    <EditText
+        android:id="@+id/etCorreo"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="emailAddress"
+        android:background="@color/login_caja"
+        android:hint="@string/hint_correo"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:textColor="@color/login_texto"
+        android:textColorHint="@color/login_hint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCabecera"
+        app:layout_constraintTop_toBottomOf="@id/tvCorreo"
+        app:layout_constraintBottom_toTopOf="@id/tvPass" />
+
+    <TextView
+        android:id="@+id/tvPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/titulo_pass"
+        android:textColor="@color/login_texto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etCorreo"
+        app:layout_constraintBottom_toTopOf="@id/etPass" />
+
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="password"
+        android:background="@color/login_caja"
+        android:hint="@string/hint_pass"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="@color/login_texto"
+        android:textColorHint="@color/login_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPass"
+        app:layout_constraintBottom_toTopOf="@id/swRecordar" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/swRecordar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/recordar"
+        android:textColor="@color/login_texto"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPass"
+        app:layout_constraintBottom_toTopOf="@id/btnContinuar" />
+
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/login_boton"
+        android:text="@string/continuar"
+        android:textColor="@color/login_texto"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swRecordar"
+        app:layout_constraintBottom_toTopOf="@id/tvMensaje" />
+
+    <TextView
+        android:id="@+id/tvMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnContinuar"
         app:layout_constraintBottom_toBottomOf="parent" />
-    <!-- Hasta aquí -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

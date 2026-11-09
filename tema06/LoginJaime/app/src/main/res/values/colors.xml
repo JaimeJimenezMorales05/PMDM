@@ -4,9 +4,20 @@
     <color name="white">#FFFFFFFF</color>
     <color name="fondo">#151A4A</color>
     <color name="texto">#FFFFFF</color>
-    <color name="caja">#292F70</color>
     <color name="boton">#FF6B6B</color>
     <color name="verde">#2EE6A6</color>
     <color name="rojo">#FF3D81</color>
+    <color name="texto_claro">#FFFFFF</color>
+    <color name="menu_barra">#00796B</color>
+    <color name="menu_fondo">#F1F8F6</color>
+    <color name="menu_texto">#004D40</color>
+    <color name="menu_boton">#26A69A</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="caja">#DDEFEB</color>
+    <color name="login_fondo">#1E3B2C</color>
+    <color name="login_caja">#2F5A43</color>
+    <color name="login_texto">#F1F5EE</color>
+    <color name="login_hint">#A9C4B2</color>
+    <color name="login_boton">#9C6B3F</color>
 
 </resources>

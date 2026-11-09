@@ -21,7 +21,12 @@
     <string name="imagen_elemento">Imagen del elemento</string>
     <string name="cabecera">Los videojuegos de Jaime</string>
 
+    <string name="titulo_correo">Correo electrónico</string>
+    <string name="titulo_pass">Contraseña</string>
+
     <string name="titulo_menu">Menú principal</string>
     <string name="saludo">Hola, %1$s</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
+
+
 </resources>

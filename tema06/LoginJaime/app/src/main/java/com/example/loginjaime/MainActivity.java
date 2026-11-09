@@ -1,16 +1,18 @@
 package com.example.loginjaime;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.google.android.material.materialswitch.MaterialSwitch;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,21 +27,35 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        ArrayList<Videojuego> videojuegos = new ArrayList<>();
-        videojuegos.add(new Videojuego("The Legend of Zelda", "Nintendo Switch", R.drawable.ic_mando));
-        videojuegos.add(new Videojuego("God of War", "PlayStation 5", R.drawable.ic_consola));
-        videojuegos.add(new Videojuego("Valorant", "PC", R.drawable.ic_pc));
-        videojuegos.add(new Videojuego("Pokémon GO", "Móvil", R.drawable.ic_movil));
-        videojuegos.add(new Videojuego("Super Smash Bros", "Nintendo Switch", R.drawable.ic_mando));
-        videojuegos.add(new Videojuego("Spider-Man 2", "PlayStation 5", R.drawable.ic_consola));
-        videojuegos.add(new Videojuego("Fortnite", "PC", R.drawable.ic_pc));
-        videojuegos.add(new Videojuego("Subway Surfers", "Móvil", R.drawable.ic_movil));
-        videojuegos.add(new Videojuego("Splatoon 3", "Nintendo Switch", R.drawable.ic_mando));
-        videojuegos.add(new Videojuego("Cyberpunk 2077", "PC", R.drawable.ic_pc));
+        EditText etCorreo = findViewById(R.id.etCorreo);
+        EditText etPass = findViewById(R.id.etPass);
+        MaterialSwitch swRecordar = findViewById(R.id.swRecordar);
+        Button btnContinuar = findViewById(R.id.btnContinuar);
+        TextView tvMensaje = findViewById(R.id.tvMensaje);
 
-        RecyclerView rvLista = findViewById(R.id.rvLista);
-        rvLista.setLayoutManager(new LinearLayoutManager(this));
-        rvLista.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        rvLista.setAdapter(new AdaptadorVideojuegos(videojuegos));
+        btnContinuar.setOnClickListener(v -> {
+            String correo = etCorreo.getText().toString().trim();
+            String pass = etPass.getText().toString();
+
+            if (correo.isEmpty()) {
+                etCorreo.setError(getString(R.string.error_correo_vacio));
+                return;
+            }
+            if (pass.isEmpty()) {
+                etPass.setError(getString(R.string.error_pass_vacia));
+                return;
+            }
+
+            if (correo.equals("jaime@correo.com") && pass.equals("1234")) {
+                // 1.2: abrir el menú pasándole el correo y cerrar el login
+                Intent intent = new Intent(this, MenuActivity.class);
+                intent.putExtra(MenuActivity.EXTRA_CORREO, correo);
+                startActivity(intent);
+                finish();
+            } else {
+                tvMensaje.setText(R.string.msg_incorrecto);
+                tvMensaje.setTextColor(getColor(android.R.color.holo_red_dark));
+            }
+        });
     }
 }
