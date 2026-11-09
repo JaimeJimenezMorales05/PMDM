@@ -4,7 +4,7 @@
     <string name="etiqueta_pass">Contraseña</string>
     <string name="hint_correo">correo@correo.com</string>
     <string name="hint_pass">Escribe tu contraseña</string>
-    <string name="recordar">Recordar contraseña</string>
+    <string name="recordar">Recordar correo</string>
     <string name="continuar">Continuar</string>
     <string name="msg_ok">Usuario y contraseña correctos</string>
     <string name="msg_ok_recordar">Usuario y contraseña correctos. Almacenados para recordar</string>
