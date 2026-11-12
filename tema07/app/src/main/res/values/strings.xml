@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">ReproductorJaime</string>
+
+    <!-- 1.1 Reproductor (cambia título y autor por los de tu canción) -->
+    <string name="titulo_cancion">SÉ DE TI</string>
+    <string name="autor_cancion">La pantera</string>
+    <string name="tiempo_cero">00:00</string>
+    <string name="play">Play</string>
+    <string name="pausa">Pausa</string>
+
+    <!-- 2 Efectos de sonido (pon el nombre de tus efectos) -->
+    <string name="titulo_efectos">Efectos de sonido</string>
+    <string name="efecto1">Aplauso</string>
+    <string name="efecto2">Campana</string>
+    <string name="efecto3">Bocina</string>
+    <string name="efecto4">Risa</string>
 </resources>
