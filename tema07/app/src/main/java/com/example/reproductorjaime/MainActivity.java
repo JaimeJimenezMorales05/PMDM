@@ -1,5 +1,8 @@
 package com.example.reproductorjaime;
 
+import android.content.res.ColorStateList;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -42,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
             handler.postDelayed(this, 500); // otra vez dentro de 0,5 s
         }
     };
+
+    // ----- Ejercicio 2: efectos de sonido -----
+    private SoundPool soundPool;
+    private int idEfecto1, idEfecto2, idEfecto3, idEfecto4;
+    private int cargados = 0; // cuántos efectos se han cargado ya
+    private Button btnEfecto1, btnEfecto2, btnEfecto3, btnEfecto4;
+    private ColorStateList colorNormal; // color original de los botones de efectos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +120,62 @@ public class MainActivity extends AppCompatActivity {
                 arrastrando = false;
             }
         });
+
+
+        // 2. Efectos de sonido con SoundPool
+        btnEfecto1 = findViewById(R.id.btnEfecto1);
+        btnEfecto2 = findViewById(R.id.btnEfecto2);
+        btnEfecto3 = findViewById(R.id.btnEfecto3);
+        btnEfecto4 = findViewById(R.id.btnEfecto4);
+
+        // Guardamos el color original para poder desmarcar los botones
+        colorNormal = btnEfecto1.getBackgroundTintList();
+
+        AudioAttributes atributos = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(4)
+                .setAudioAttributes(atributos)
+                .build();
+
+        // Cuando se han cargado los cuatro, se activan los botones
+        soundPool.setOnLoadCompleteListener((pool, idSonido, estado) -> {
+            if (estado == 0) { // 0 = cargado sin errores
+                cargados++;
+                if (cargados == 4) {
+                    btnEfecto1.setEnabled(true);
+                    btnEfecto2.setEnabled(true);
+                    btnEfecto3.setEnabled(true);
+                    btnEfecto4.setEnabled(true);
+                }
+            }
+        });
+
+        idEfecto1 = soundPool.load(this, R.raw.efecto_aplauso, 1);
+        idEfecto2 = soundPool.load(this, R.raw.efecto_campana, 1);
+        idEfecto3 = soundPool.load(this, R.raw.efecto_bocina, 1);
+        idEfecto4 = soundPool.load(this, R.raw.efecto_risa, 1);
+
+        // Cada botón reproduce su efecto y se queda marcado
+        btnEfecto1.setOnClickListener(v -> {
+            soundPool.play(idEfecto1, 1f, 1f, 1, 0, 1f);
+            marcar(btnEfecto1);
+        });
+        btnEfecto2.setOnClickListener(v -> {
+            soundPool.play(idEfecto2, 1f, 1f, 1, 0, 1f);
+            marcar(btnEfecto2);
+        });
+        btnEfecto3.setOnClickListener(v -> {
+            soundPool.play(idEfecto3, 1f, 1f, 1, 0, 1f);
+            marcar(btnEfecto3);
+        });
+        btnEfecto4.setOnClickListener(v -> {
+            soundPool.play(idEfecto4, 1f, 1f, 1, 0, 1f);
+            marcar(btnEfecto4);
+        });
     }
 
     // 1.4 Ciclo de vida
@@ -129,8 +196,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         player.release();
+        soundPool.release();
     }
-
+    private void marcar(Button pulsado) {
+        // Primero, los cuatro vuelven a su color normal
+        btnEfecto1.setBackgroundTintList(colorNormal);
+        btnEfecto2.setBackgroundTintList(colorNormal);
+        btnEfecto3.setBackgroundTintList(colorNormal);
+        btnEfecto4.setBackgroundTintList(colorNormal);
+        int color = ContextCompat.getColor(this, R.color.efecto_marcado);
+        pulsado.setBackgroundTintList(ColorStateList.valueOf(color));
+    }
     // 75000 ms -> "01:15"
     private String formatear(long ms) {
         long segundos = ms / 1000;
